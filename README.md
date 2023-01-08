@@ -1,5 +1,5 @@
 # Library management app
-![Alt text](http://github.com/abhineetraj1/library-management-app/raw/main/img1.png)
+![alt text](http://github.com/abhineetraj1/library-management-app/raw/main/img1.png)
 This software manages the library work efficiently. This is made in python3.11 .
 ## Features
 *	Add member
