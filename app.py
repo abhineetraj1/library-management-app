@@ -14,9 +14,11 @@ top.geometry("700x400")
 Label(top, background="black", height="100", width="700").place(x=0,y=0)
 Label(top, background="black", foreground="white", font=("Arial","23"), text="Library management app").place(x=20,y=0)
 
+#This function generates the random number id for further usage
 def rndm():
 	return str(datetime.datetime.now()).replace(" ","").replace("-","").replace(".","").replace(":","")
 
+#This function removes the book by entering that particular book's ID. If the book ID is not matched then it will return the error message
 def removeBook():
 	w=sd.askstring("Remove book","Enter book id")
 	if w in os.listdir("books"):
@@ -25,6 +27,7 @@ def removeBook():
 	else:
 		msg.showerror("Remove book","Book is not available")
 
+#This function removes the member by entering that particular member's ID. If the member ID is not matched then it will return the error message
 def removeMember():
 	w=sd.askstring("Remove member","Enter member id")
 	if w in os.listdir("members"):
@@ -33,6 +36,7 @@ def removeMember():
 	else:
 		msg.showerror("Remove member","Member not found")
 
+#This function add the member by entering that particular member's details and member's ID is generated
 def addMember():
 	gtk1=Tk()
 	gtk1.title("Add member")
@@ -54,6 +58,7 @@ def addMember():
 	w[1].place(x=230, y=70)
 	gtk1.mainloop()
 
+#This function add the book by entering that particular book's details and the book ID is generated
 def addBook():
 	gtk2=Tk()
 	gtk2.title("Add book")
@@ -75,6 +80,7 @@ def addBook():
 	w[1].place(x=230, y=70)
 	gtk2.mainloop()
 
+#This function removes the book issue data from both book and member ID
 def removeDue():
 	w=sd.askstring("Remove due","Enter id of member")
 	if (w in os.listdir("members")):
@@ -102,6 +108,7 @@ def getInfo():
 	Button(gtk3, text="Github", background="black", foreground="white" ,font=("Bahnschrift","18"), command=github).place(x=10,y=170)
 	gtk3.mainloop()
 
+#This function assign the book and add book to user's issue data from both member and book ID
 def assignBook():
 	gtk3=Tk()
 	gtk3.title("Assign book")
@@ -126,6 +133,7 @@ def assignBook():
 	w[1].place(x=230, y=70)
 	gtk3.mainloop()
 
+#This function displays the list of books added to data storage
 def listBooks():
 	gtk4 = Tk()
 	gtk4.title("Books")
@@ -168,7 +176,7 @@ def listBooks():
 	listBks()
 	gtk4.mainloop()
 
-
+#This function displays the list of member added to storage
 def listMembers():
 	gtk5 = Tk()
 	gtk5.title("Books")
@@ -211,6 +219,7 @@ def listMembers():
 	listMbr()
 	gtk5.mainloop()
 
+#GUI framework of the app
 Button(top, text="Add member", background="green", foreground="white", font=("Bahnschrift","15"), command=addMember).place(x=20,y=50)
 Button(top, text="Add book", background="green", foreground="white", font=("Bahnschrift","15"), command=addBook).place(x=20,y=110)
 Button(top, text="Assign book", background="green", foreground="white", font=("Bahnschrift","15"), command=assignBook).place(x=20,y=170)
